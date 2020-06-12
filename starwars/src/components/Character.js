@@ -4,28 +4,36 @@ import styled from 'styled-components';
 
 const WrapperDiv = styled.div`
     display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 90vh;
 `
 
 const StyledContainer = styled.div`
     display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 `
 
 const CharCard = styled.div`
     display:flex;
     flex-direction: column;
+    background: rgba(76, 175, 80, 0.3);
+    width: 15%;
+    margin: 2%;
+    border: 1px solid black; 
+    border-radius: 5px;
 `
 const CharName = styled.h2`
     color: black;
     text-shadow: 1px 1px 5px #fff;
+    font-size: 1.2rem;
 `
 
 const CharBirth = styled.h3`
     color: white;
     text-shadow: 1px 1px 5px black;
+    font-size: .8rem;
 `
 
 const Characters = (props) => {

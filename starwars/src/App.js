@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <h1 className='Header'>Characters</h1>
+      <h1 className='Header'>React Wars - Star Wars API</h1>
       <div className='charContainer'>
         <Characters data = {swData} />
       </div>
