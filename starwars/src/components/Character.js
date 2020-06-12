@@ -2,15 +2,54 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const WrapperDiv = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90vh;
+`
 
+const StyledContainer = styled.div`
+    display:flex;
+`
 
-const Cards = (props) => {
+const CharCard = styled.div`
+    display:flex;
+    flex-direction: column;
+`
+const CharName = styled.h2`
+    color: black;
+    text-shadow: 1px 1px 5px #fff;
+`
+
+const CharBirth = styled.h3`
+    color: white;
+    text-shadow: 1px 1px 5px black;
+`
+
+const Characters = (props) => {
     const {data} = props;
 
-    // return (
+    return (
+        <WrapperDiv>
+            <StyledContainer>
+            {data.map((people) => {
+                return (
+                    <CharCard>
+                        <CharName>{people.name}</CharName>
+                        <CharBirth>Birth Year: {people.birth_year}</CharBirth>
+                        {/* <h3>Species: {people.species}</h3> */}
+                    </CharCard>
+                )
+            })}
+            </StyledContainer>
+        </WrapperDiv>
 
-    // )
+    )
 }
+
+export default Characters;
 
 // {
 // 	"name": "Luke Skywalker",

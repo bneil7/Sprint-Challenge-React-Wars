@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import {BASE_URL} from './constants/index';
+import Characters from './components/Character';
 import axios from 'axios';
 
 const App = () => {
@@ -17,8 +18,12 @@ const App = () => {
     axios
       .get(`${BASE_URL}`)
       .then(res => {
-        console.log('AW YEAH', res.data)
-        setSwData(res.data)
+        console.log('AW YEAH', res.data.results)
+        setSwData(res.data.results)
+            // .then(res => {
+            //   console.log('yess', res.data.results)
+            //   axios.post(`${BASE_URL}?api_key/api/species/`)
+            // }); // SUPER LOST HERE
        })
        .catch(error => {
        debugger
@@ -27,8 +32,11 @@ const App = () => {
    }, []);
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
+    <div className='App'>
+      <h1 className='Header'>Characters</h1>
+      <div className='charContainer'>
+        <Characters data = {swData} />
+      </div>
     </div>
   );
 }
